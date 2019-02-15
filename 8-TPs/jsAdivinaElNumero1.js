@@ -11,16 +11,33 @@ var numeroSecreto;
 var contadorIntentos;
 
 function comenzar()
-{
-	//Genero el número RANDOM entre 1 y 100
+{	//Genero el número RANDOM entre 1 y 100
 	 
 		//alert(numeroSecreto );
-	
+	numeroSecreto=Math.floor((Math.random()*100)+1);
 
+	//alert("Numero secreto : "+numeroSecreto);
+
+	contadorIntentos=0;
 }
 
 function verificar()
 {
-	
-	
+	var numeroIngresado;
+	var mensaje;
+
+	contadorIntentos=contadorIntentos+1;
+
+	intentos.value=contadorIntentos;
+	numeroIngresado=numero.value;
+
+	if (numeroIngresado==numeroSecreto) {
+		mensaje="Sos un genio, lo hiciste en: "+contadorIntentos+" intentos!!";
+	}else{if (numeroIngresado<numeroSecreto){
+			mensaje="El numero ingresado es menor al numero secreto";
+		}else{
+			mensaje="El numero ingresado es mayor al numero secreto";
+		}
+	}
+	alert(mensaje)
 }
