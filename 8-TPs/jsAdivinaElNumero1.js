@@ -31,6 +31,18 @@ function verificar()
 	intentos.value=contadorIntentos;
 	numeroIngresado=numero.value;
 
+	switch	(numeroIngresado){
+		case 0 (numeroIngresado==numeroSecreto):
+		mensaje="Sos un genio, lo hiciste en: "+contadorIntentos+" intentos!!";
+		break;
+		case 1 (numeroIngresado>numeroSecreto):
+		break;
+		case 2 (numeroIngresado<numeroSecreto):
+		mensaje="El numero ingresado es mayor al numero secreto";
+		break;
+	}
+
+/*
 	if (numeroIngresado==numeroSecreto) {
 		mensaje="Sos un genio, lo hiciste en: "+contadorIntentos+" intentos!!";
 	}else{if (numeroIngresado<numeroSecreto){
@@ -39,5 +51,6 @@ function verificar()
 			mensaje="El numero ingresado es mayor al numero secreto";
 		}
 	}
+*/
 	alert(mensaje)
 }
