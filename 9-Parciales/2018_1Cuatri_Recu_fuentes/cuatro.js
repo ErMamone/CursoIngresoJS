@@ -1,35 +1,78 @@
 function mostrar()
 {
-	var precio;
-	var precioIva;
-	var precioPropina;
-	var precioTotal;
-	var iva;
-	var propina;
-	var cantPersonas;
-	var precioDividido;
+	var num1;
+	var num2;
+	var num3;
+	var num4;
+	var descuento;
+	var suma;
+	var total;
+	var mayor;
+	var mensaje;
+	var desc;
 
-	precio = prompt("Precio a pagar:","1000");
+	num1=prompt("Ingrese el primer valor");
+	num2=prompt("Ingrese el segundo valor");
+	num3=prompt("Ingrese el tercer valor");
+	num4=prompt("Ingrese el cuarto valor");
 
-	cantPersonas = prompt("Cantidad de personas que pagan", "5");
+	num1=parseInt(num1);
+	num2=parseInt(num2);
+	num3=parseInt(num3);
+	num4=parseInt(num4);
 
-	precio = parseInt(precio);
-	cantPersonas= parseInt(cantPersonas);
+	suma=num1+num2+num3+num4;
 
-	iva= 21/100;
-	precioIva= precio*iva;
+	if (num1>num2 && num1>num3 && num1>num4) {
+		mayor=num1;
+		mensaje="El numero 1 es el mayor: "+num1;
+	}else{
+		if (num2>num1 && num2>num3 && num2>num4) {
+			mayor=num2;
+		mensaje="El numero 2 es el mayor: "+num2;
+		}else{
+			if (num3>num1 && num3>num2 && num3>num4) {
+				mayor=num3;
+				mensaje="El numero 3 es el mayor: "+num3;
+			}else{
+					if (num4>num1 && num4>num2 && num4>num3) {
+					mayor=num4;
+					mensaje="El numero 4 es el mayor: "+num4;
+					}else{
+						mensaje="El numero mayor se repite";
+				}
+			}
+		}
+	}
+	
 
-	propina= 10/100;
-	precioPropina= precio*propina;
+	if (suma>=100) {
+		descuento=10;
+		//desc=true;
+	}
+	else{
+		if (suma>=50) {
+			descuento= 5;
+			//desc=true;
+		}
+		else{
+				aumento= 15;
+				//desc=false;
+				}}
+//Metodos booleanos comentados, 2da posibilidad
+/*
+	if (desc==true) {
+		total=suma-(suma*descuento/100);
+	}else{
+		total=suma+(suma*descuento/100);
+	}
+*/
+	if (aumento/1) {
+		total=suma+(suma*aumento/100);
+	}else{
+		total=suma-(suma*descuento/100);
+	}
 
-	precioTotal=precioPropina+precioIva+precio;
+	alert("El total es= "+total+" ---- "+mensaje);
 
-	precioDividido= precioTotal/cantPersonas;
-
-
-
-	alert("El precio es: "+precio+", el iva es "+precioIva+", la propina es del 10%: "+precioPropina+" y el precio total es de: "+precioTotal+" Cada uno debe pagar: "+precioDividido);
 }
-//en un restuariante un grupo de amigos quiere saber cuanto debe pagar cada uno del total, 
-//recordar que se debe agregar el 10% de propina, y que los precios no incluyen el iva(21%)
-//mostrar toda la informacion en un solo alert
